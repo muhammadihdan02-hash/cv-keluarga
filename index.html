@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="referrer" content="no-referrer">
+    <title>Keluarga — Family CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===================== NAVIGATION ===================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="navLogoGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#F5E2A8"/>
+                            <stop offset="50%" stop-color="#D4AF37"/>
+                            <stop offset="100%" stop-color="#AA820A"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="50" cy="50" r="45" stroke="url(#navLogoGold)" stroke-width="2" opacity="0.6"/>
+                    <circle cx="50" cy="50" r="41" stroke="url(#navLogoGold)" stroke-width="1" stroke-dasharray="3 3" opacity="0.3"/>
+                    <path d="M 30 76 C 34 76 37 72 37 65 L 37 28 C 37 19 48 17 56 22 C 63 26 63 37 55 42 C 49 45 43 45 37 45 C 45 45 59 46 66 52 C 73 59 72 71 62 76 C 52 80 38 79 30 76 Z" 
+                          stroke="url(#navLogoGold)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <span class="logo-text">Keluarga</span>
+        </div>
+        <div class="nav-links">
+            <a href="#home" class="nav-link active" data-section="home">Beranda</a>
+            <a href="#anggota" class="nav-link" data-section="anggota">Anggota</a>
+            <a href="#keunikan" class="nav-link" data-section="keunikan">Keunikan</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#home" class="mobile-link" data-section="home">Beranda</a>
+        <a href="#anggota" class="mobile-link" data-section="anggota">Anggota</a>
+        <a href="#keunikan" class="mobile-link" data-section="keunikan">Keunikan</a>
+    </div>
+
+    <!-- ===================== SECTION 1: HOME ===================== -->
+    <section id="home" class="section section-home">
+        <!-- Particle background -->
+        <canvas id="particleCanvas"></canvas>
+        
+        <div class="home-content">
+            <div class="family-photo-wrapper animate-on-scroll">
+                <div class="photo-frame">
+                    <div class="photo-placeholder">
+                        <!-- Placeholder family illustration -->
+                        <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="family-svg">
+                            <!-- Father -->
+                            <circle cx="120" cy="100" r="30" fill="#D4AF37" opacity="0.9"/>
+                            <rect x="100" y="135" width="40" height="60" rx="10" fill="#D4AF37" opacity="0.7"/>
+                            <text x="120" y="108" text-anchor="middle" fill="#1a1a1a" font-size="14" font-weight="bold">👨</text>
+                            
+                            <!-- Mother -->
+                            <circle cx="200" cy="95" r="30" fill="#F0D68A" opacity="0.9"/>
+                            <rect x="180" y="130" width="40" height="60" rx="10" fill="#F0D68A" opacity="0.7"/>
+                            <text x="200" y="103" text-anchor="middle" fill="#1a1a1a" font-size="14" font-weight="bold">👩</text>
+                            
+                            <!-- Child 1 -->
+                            <circle cx="280" cy="110" r="25" fill="#D4AF37" opacity="0.8"/>
+                            <rect x="263" y="140" width="34" height="50" rx="8" fill="#D4AF37" opacity="0.6"/>
+                            <text x="280" y="117" text-anchor="middle" fill="#1a1a1a" font-size="13" font-weight="bold">👦</text>
+                            
+                            <!-- Child 2 -->
+                            <circle cx="80" cy="190" r="22" fill="#F0D68A" opacity="0.8"/>
+                            <rect x="65" y="217" width="30" height="45" rx="8" fill="#F0D68A" opacity="0.6"/>
+                            <text x="80" y="197" text-anchor="middle" fill="#1a1a1a" font-size="12" font-weight="bold">👧</text>
+                            
+                            <!-- Child 3 -->
+                            <circle cx="320" cy="190" r="20" fill="#D4AF37" opacity="0.8"/>
+                            <rect x="306" y="215" width="28" height="40" rx="7" fill="#D4AF37" opacity="0.6"/>
+                            <text x="320" y="197" text-anchor="middle" fill="#1a1a1a" font-size="11" font-weight="bold">👶</text>
+
+                            <!-- Connecting lines (family bond) -->
+                            <line x1="120" y1="130" x2="200" y2="125" stroke="#D4AF37" stroke-width="2" opacity="0.3"/>
+                            <line x1="160" y1="140" x2="280" y2="135" stroke="#D4AF37" stroke-width="1.5" opacity="0.2"/>
+                            <line x1="160" y1="140" x2="80" y2="185" stroke="#D4AF37" stroke-width="1.5" opacity="0.2"/>
+                            <line x1="200" y1="140" x2="320" y2="185" stroke="#D4AF37" stroke-width="1.5" opacity="0.2"/>
+                        </svg>
+                        <p class="photo-note">📷 Ganti dengan foto keluarga Anda</p>
+                    </div>
+                    <div class="frame-corner top-left"></div>
+                    <div class="frame-corner top-right"></div>
+                    <div class="frame-corner bottom-left"></div>
+                    <div class="frame-corner bottom-right"></div>
+                </div>
+            </div>
+            
+            <div class="home-text animate-on-scroll">
+                <p class="greeting">Selamat Datang di</p>
+                <h1 class="family-name"><span class="gold-text">Keluarga</span></h1>
+                <div class="motto-container">
+                    <div class="motto-line"></div>
+                    <p class="motto">"Bersatu dalam Cinta, Bertumbuh Bersama"</p>
+                    <div class="motto-line"></div>
+                </div>
+                <p class="family-desc">
+                    Kami adalah keluarga yang percaya bahwa kebersamaan adalah kekuatan terbesar. 
+                    Dengan 5 anggota yang unik, kami menjalani hidup penuh warna, saling mendukung, 
+                    dan terus bertumbuh bersama.
+                </p>
+                <div class="home-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="5">0</span>
+                        <span class="stat-label">Anggota</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="20">0</span>
+                        <span class="stat-label">Tahun Bersama</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="1000">0</span>
+                        <span class="stat-label">Kenangan Indah</span>
+                    </div>
+                </div>
+                <a href="#anggota" class="cta-button">
+                    <span>Kenali Kami</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M19 12l-7 7-7-7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="mouse-wheel"></div>
+            </div>
+            <p>Scroll ke bawah</p>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 2: ANGGOTA KELUARGA ===================== -->
+    <section id="anggota" class="section section-anggota">
+        <div class="section-header animate-on-scroll">
+            <p class="section-subtitle">Kenali Kami Lebih Dekat</p>
+            <h2 class="section-title">Anggota <span class="gold-text">Keluarga</span></h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="members-container">
+            <!-- Member 1: Ayah -->
+            <div class="member-card animate-on-scroll" data-member="ayah">
+                <div class="card-glow"></div>
+                <div class="card-inner">
+                    <div class="member-avatar">
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-placeholder">
+                            <span class="avatar-emoji">👨‍💼</span>
+                        </div>
+                        <div class="member-role-badge">Ayah</div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Bahrudin</h3>
+                        <p class="member-title">Kepala Keluarga</p>
+                        <div class="member-divider"></div>
+                        <div class="member-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">💼</span>
+                                <div>
+                                    <span class="detail-label">Pekerjaan</span>
+                                    <span class="detail-value">PNS pendidikan</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🎂</span>
+                                <div>
+                                    <span class="detail-label">Usia</span>
+                                    <span class="detail-value">45 Tahun</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🎯</span>
+                                <div>
+                                    <span class="detail-label">Hobi</span>
+                                    <span class="detail-value">Berkebun</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-quote">
+                            <p>"Keluarga adalah fondasi terkuat yang pernah saya bangun."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Member 2: Ibu -->
+            <div class="member-card animate-on-scroll" data-member="ibu">
+                <div class="card-glow"></div>
+                <div class="card-inner">
+                    <div class="member-avatar">
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-placeholder">
+                            <span class="avatar-emoji">👩‍🏫</span>
+                        </div>
+                        <div class="member-role-badge">Ibu</div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Siti Rochmah</h3>
+                        <p class="member-title">Ibu Rumah Tangga & Guru</p>
+                        <div class="member-divider"></div>
+                        <div class="member-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">💼</span>
+                                <div>
+                                    <span class="detail-label">Pekerjaan</span>
+                                    <span class="detail-value">Guru</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🎂</span>
+                                <div>
+                                    <span class="detail-label">Usia</span>
+                                    <span class="detail-value">42 Tahun</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🎯</span>
+                                <div>
+                                    <span class="detail-label">Hobi</span>
+                                    <span class="detail-value">Memasak, Yoga, jalan jalan</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-quote">
+                            <p>"Mendidik anak-anak adalah karya terbaik dalam hidup saya."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Member 3: Anak 1 -->
+            <div class="member-card animate-on-scroll" data-member="anak1">
+                <div class="card-glow"></div>
+                <div class="card-inner">
+                    <div class="member-avatar">
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-placeholder">
+                            <span class="avatar-emoji">👨‍🎓</span>
+                        </div>
+                        <div class="member-role-badge">Anak ke-1</div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Rizky A.F</h3>
+                        <p class="member-title">Mahasiswa Psikologi</p>
+                        <div class="member-divider"></div>
+                        <div class="member-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">💼</span>
+                                <div>
+                                    <span class="detail-label">Kesibukan</span>
+                                    <span class="detail-value">Mahasiswa Universitas pancasila</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🎂</span>
+                                <div>
+                                    <span class="detail-label">Usia</span>
+                                    <span class="detail-value">20 Tahun</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🎯</span>
+                                <div>
+                                    <span class="detail-label">Hobi</span>
+                                    <span class="detail-value">shoping, jajan</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-quote">
+                            <p>"Teknologi adalah cara saya membuat dunia lebih baik."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Member 4: Anak 2 -->
+            <div class="member-card animate-on-scroll" data-member="anak2">
+                <div class="card-glow"></div>
+                <div class="card-inner">
+                    <div class="member-avatar">
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-placeholder">
+                            <span class="avatar-emoji">👩‍🎨</span>
+                        </div>
+                        <div class="member-role-badge">Anak ke-2</div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Muhammad Ihdhan Dinurachman</h3>
+                        <p class="member-title">Mahasiswa cakrawal university</p>
+                        <div class="member-divider"></div>
+                        <div class="member-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">💼</span>
+                                <div>
+                                    <span class="detail-label">Kesibukan</span>
+                                    <span class="detail-value">Mahasiswa cakrawala university</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🎂</span>
+                                <div>
+                                    <span class="detail-label">Usia</span>
+                                    <span class="detail-value">18 Tahun</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🎯</span>
+                                <div>
+                                    <span class="detail-label">Hobi</span>
+                                    <span class="detail-value">gaming, jajan, belanja, olahraga</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-quote">
+                            <p>"Setiap kanvas kosong adalah kesempatan untuk bercerita."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Member 5: Anak 3 -->
+            <div class="member-card animate-on-scroll" data-member="anak3">
+                <div class="card-glow"></div>
+                <div class="card-inner">
+                    <div class="member-avatar">
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-placeholder">
+                            <span class="avatar-emoji">👦</span>
+                        </div>
+                        <div class="member-role-badge">Anak ke-3</div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Zahran</h3>
+                        <p class="member-title">siswa sma</p>
+                        <div class="member-divider"></div>
+                        <div class="member-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">💼</span>
+                                <div>
+                                    <span class="detail-label">Kesibukan</span>
+                                    <span class="detail-value">Siswa Kelas 10 — SMA Negeri 3</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🎂</span>
+                                <div>
+                                    <span class="detail-label">Usia</span>
+                                    <span class="detail-value">10 Tahun</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🎯</span>
+                                <div>
+                                    <span class="detail-label">Hobi</span>
+                                    <span class="detail-value">gaming, jajan, belanja</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-quote">
+                            <p>"Aku mau jadi pemain bola dan juga ilmuwan!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 3: KEUNIKAN KELUARGA ===================== -->
+    <section id="keunikan" class="section section-keunikan">
+        <div class="section-header animate-on-scroll">
+            <p class="section-subtitle">Apa yang Membuat Kami Spesial</p>
+            <h2 class="section-title">Keunikan <span class="gold-text">Kami</span></h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="keunikan-grid">
+            <!-- Motto -->
+            <div class="keunikan-card animate-on-scroll" data-delay="0">
+                <div class="keunikan-icon-wrapper">
+                    <div class="keunikan-icon">💫</div>
+                </div>
+                <h3>Motto Keluarga</h3>
+                <p class="keunikan-motto">"Bersatu dalam Cinta, Bertumbuh Bersama"</p>
+                <p>Motto ini kami pegang teguh bersama. Setiap keputusan dan setiap langkah selalu berlandaskan cinta kasih dan kebersamaan untuk masa depan yang lebih baik.</p>
+            </div>
+
+            <!-- Tradisi -->
+            <div class="keunikan-card animate-on-scroll" data-delay="100">
+                <div class="keunikan-icon-wrapper">
+                    <div class="keunikan-icon">🏠</div>
+                </div>
+                <h3>Tradisi Family Night</h3>
+                <p>Setiap Jumat malam adalah <strong>Family Night</strong> — waktu khusus tanpa gadget. Kami bermain board game, memasak bersama, atau bercerita di ruang keluarga.</p>
+            </div>
+
+            <!-- Logo Monogram -->
+            <div class="keunikan-card animate-on-scroll" data-delay="200">
+                <div class="keunikan-icon-wrapper">
+                    <div class="keunikan-icon">✨</div>
+                </div>
+                <h3>Logo Monogram</h3>
+                <div class="family-crest">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="crestGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#F5E2A8"/>
+                                <stop offset="50%" stop-color="#D4AF37"/>
+                                <stop offset="100%" stop-color="#AA820A"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="45" stroke="url(#crestGold)" stroke-width="1.5" opacity="0.5"/>
+                        <circle cx="50" cy="50" r="40" stroke="url(#crestGold)" stroke-width="1" stroke-dasharray="3 3" opacity="0.35"/>
+                        <path d="M 30 76 C 34 76 37 72 37 65 L 37 28 C 37 19 48 17 56 22 C 63 26 63 37 55 42 C 49 45 43 45 37 45 C 45 45 59 46 66 52 C 73 59 72 71 62 76 C 52 80 38 79 30 76 Z" 
+                              stroke="url(#crestGold)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <p class="monogram-desc"><strong>Inisial "B" — Continuous Line</strong><br>Didesain dengan satu garis menyambung tanpa putus, melambangkan ikatan dan cinta keluarga yang kekal serta tak terpisahkan.</p>
+            </div>
+
+            <!-- Warna Keluarga -->
+            <div class="keunikan-card animate-on-scroll" data-delay="300">
+                <div class="keunikan-icon-wrapper">
+                    <div class="keunikan-icon">🎨</div>
+                </div>
+                <h3>Warna Keluarga</h3>
+                <div class="color-palette">
+                    <div class="color-swatch" style="background: #1a1a1a;" title="Hitam — Kekuatan">
+                        <span>Kekuatan</span>
+                    </div>
+                    <div class="color-swatch" style="background: #D4AF37;" title="Emas — Kemuliaan">
+                        <span>Kemuliaan</span>
+                    </div>
+                    <div class="color-swatch" style="background: #2a2a2a;" title="Abu Gelap — Keteguhan">
+                        <span>Keteguhan</span>
+                    </div>
+                    <div class="color-swatch" style="background: #F0D68A;" title="Emas Muda — Kehangatan">
+                        <span>Kehangatan</span>
+                    </div>
+                </div>
+                <p>Kombinasi hitam & emas melambangkan kekuatan, kemuliaan, dan kehangatan yang tak lekang oleh waktu.</p>
+            </div>
+
+            <!-- Nilai Keluarga -->
+            <div class="keunikan-card animate-on-scroll" data-delay="400">
+                <div class="keunikan-icon-wrapper">
+                    <div class="keunikan-icon">❤️</div>
+                </div>
+                <h3>5 Nilai Inti</h3>
+                <div class="values-list">
+                    <div class="value-item">
+                        <div class="value-number">01</div>
+                        <div class="value-text">
+                            <strong>Kejujuran</strong> — Selalu berkata benar
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-number">02</div>
+                        <div class="value-text">
+                            <strong>Kerja Keras</strong> — Pantang menyerah
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-number">03</div>
+                        <div class="value-text">
+                            <strong>Kasih Sayang</strong> — Saling mencintai
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-number">04</div>
+                        <div class="value-text">
+                            <strong>Kebersamaan</strong> — Satu untuk semua
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-number">05</div>
+                        <div class="value-text">
+                            <strong>Keimanan</strong> — Berpegang pada iman
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pencapaian -->
+            <div class="keunikan-card animate-on-scroll" data-delay="500">
+                <div class="keunikan-icon-wrapper">
+                    <div class="keunikan-icon">🌟</div>
+                </div>
+                <h3>Pencapaian Bersama</h3>
+                <div class="timeline-mini">
+                    <div class="timeline-item-mini">
+                        <span class="timeline-year">2004</span>
+                        <span class="timeline-event">Keluarga terbentuk</span>
+                    </div>
+                    <div class="timeline-item-mini">
+                        <span class="timeline-year">2005</span>
+                        <span class="timeline-event">Membangun rumah impian</span>
+                    </div>
+                    <div class="timeline-item-mini">
+                        <span class="timeline-year">2020</span>
+                        <span class="timeline-event">Perjalanan keluarga ke luar kota</span>
+                    </div>
+                    <div class="timeline-item-mini">
+                        <span class="timeline-year">2026</span>
+                        <span class="timeline-event">Semua anak berprestasi gemilang</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer animate-on-scroll">
+            <div class="footer-crest">
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" stroke="#D4AF37" stroke-width="1.5" opacity="0.6"/>
+                    <path d="M 30 76 C 34 76 37 72 37 65 L 37 28 C 37 19 48 17 56 22 C 63 26 63 37 55 42 C 49 45 43 45 37 45 C 45 45 59 46 66 52 C 73 59 72 71 62 76 C 52 80 38 79 30 76 Z" 
+                          stroke="#D4AF37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <p class="footer-text">Keluarga © 2026</p>
+            <p class="footer-motto">"Bersatu dalam Cinta, Bertumbuh Bersama"</p>
+            <p class="footer-made">Dibuat dengan ❤️ oleh Keluarga</p>
+        </footer>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
