@@ -332,4 +332,3 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('%c✨ Keluarga - Family CV ✨', 'color: #D4AF37; font-size: 20px; font-weight: bold; font-family: serif;');
     console.log('%cDibuat dengan ❤️', 'color: #F0D68A; font-size: 12px;');
 });
-
